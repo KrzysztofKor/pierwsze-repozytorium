@@ -18,7 +18,7 @@ body {
 }
 
 .flexbox-container div {
-    border: 1px solid firebrick;
+    border: 2px solid firebrick;
     margin: 3px;
 
 }
@@ -33,7 +33,7 @@ body {
     /*    flex-basis: 400px;*/
     /*    order: 1;*/
     /*    align-self: flex-start;*/
-    color: lightcoral;
+    color: cornflowerblue;
 }
 
 .a3 {
