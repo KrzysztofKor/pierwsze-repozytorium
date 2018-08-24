@@ -8,7 +8,7 @@ body {
 
 .flexbox-container {
     padding: 3px;
-    border: 1px solid red;
+    border: 3px solid red;
     display: flex;
     height: 75vh;
     align-items: center;
@@ -18,7 +18,7 @@ body {
 }
 
 .flexbox-container div {
-    border: 1px solid green;
+    border: 2px solid firebrick;
     margin: 3px;
 
 }
@@ -33,7 +33,7 @@ body {
     /*    flex-basis: 400px;*/
     /*    order: 1;*/
     /*    align-self: flex-start;*/
-    color: greenyellow;
+    color: cornflowerblue;
 }
 
 .a3 {
