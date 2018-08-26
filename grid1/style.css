@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: ;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "purple purple purple" "red blue green" "red yellow green";
+    width: 600px;
+    height: 440px;
+    border: 1px solid black;
+
+    position: absolute;
+    top: 25%;
+    left: 25%;
+
+}
+
+
+.purple {
+    background: #9a0d9a;
+    grid-area: purple;
+}
+
+
+.red {
+    background: #f70303;
+    grid-area: red;
+}
+
+.blue {
+    background: #0909f4;
+    grid-area: blue
+}
+
+.yellow {
+    background: #bcbc0f;
+    grid-area: yellow;
+}
+
+.green {
+    background: #37bf37;
+    grid-area: green;
+}
