@@ -56,9 +56,11 @@ function ball() {
 
     if (ballY <= 0 || ballY + ballSize >= ch) {
         ballSpeedY = -ballSpeedY;
+        speedUp();
     }
     if (ballX <= 0 || ballX + ballSize >= cw) {
         ballSpeedX = -ballSpeedX;
+        speedUp();
     }
 
 }
@@ -67,8 +69,30 @@ topCanvas = canvas.offsetTop;
 function playerPosition(e) {
     //    console.log(e);
     playerY = e.clientY - topCanvas - paddleHeight / 2;
+
+    if (playerY >= ch - paddleHeight) {
+        playerY = ch - paddleHeight
+    }
+    if (playerY <= 0) {
+        playerY = 0
+    }
+    aiY = playerY;
+
 }
 
+function speedUp() {
+    console.log(ballSpeedX + ", " + ballSpeedY);
+    if (ballSpeedX > 0 && ballSpeedX < 8) {
+        ballSpeedX += 0.2;
+    } else if (ballSpeedX < 0 && ballSpeedX > -8) {
+        ballSpeedX -= 0.2;
+    }
+    if (ballSpeedY > 0 && ballSpeedY < 8) {
+        ballSpeedY += 0.2;
+    } else if (ballSpeedY < 0 && ballSpeedY > -8) {
+        ballSpeedY -= 0.2;
+    }
+}
 canvas.addEventListener('mousemove', playerPosition)
 
 
