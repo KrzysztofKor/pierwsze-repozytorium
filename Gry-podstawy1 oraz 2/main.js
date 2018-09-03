@@ -21,8 +21,8 @@ let aiY = 200;
 const lineWidth = 6;
 const lineHeight = 16;
 
-let ballSpeedX = 1;
-let ballSpeedY = 1;
+let ballSpeedX = 0.4;
+let ballSpeedY = 0.2;
 
 function table() {
     ctx.fillStyle = "#000";
@@ -93,7 +93,31 @@ function speedUp() {
         ballSpeedY -= 0.2;
     }
 }
-canvas.addEventListener('mousemove', playerPosition)
+
+function aiPosition() {
+    var middlePadel = aiY + paddleHeight / 2;
+    var middleBall = ballY + ballSize / 2;
+    if (ballX > 500) {
+        if (middlePadel - middleBall > 200) {
+            aiY -= 15;
+        } else if (middlePadel - middleBall > 50) {
+            aiY -= 5;
+        }
+        if (middlePadel - middleBall < -200) {
+            aiY += 15
+        } else if (middlePadel - middleBall < -50) {
+            aiY += 5
+        }
+
+    } else if (ballX <= 500 && ballX > 150) {
+        if (middlePanel - middleBall > 100) {
+            aiY -= 3
+        } else if (middlePanel - middleBall < -100) {
+            aiY += 3
+        }
+    }
+}
+canvas.addEventListener('mousemove', playerPosition);
 
 
 
@@ -102,5 +126,6 @@ function game() {
     ball();
     player();
     ai();
+    aiPosition();
 }
 setInterval(game, 100 / 60)
