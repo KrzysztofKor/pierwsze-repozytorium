@@ -21,7 +21,7 @@ let aiY = 200;
 const lineWidth = 6;
 const lineHeight = 16;
 
-let ballSpeedX = 0.4;
+let ballSpeedX = 0.45;
 let ballSpeedY = 0.2;
 
 function table() {
@@ -40,7 +40,7 @@ function player() {
 }
 
 function ai() {
-    ctx.fillStyle = "yellow";
+    ctx.fillStyle = "gold";
     ctx.fillRect(aiX, aiY, paddleWidth, paddleHeight);
 }
 
